@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
-import { View, Text, TextInput, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, ActivityIndicator, Image } from 'react-native';
 import { Button } from '@rneui/themed';
 import styles from './../styles/Style';
 import bcrypt from "bcryptjs-react";
@@ -73,7 +73,10 @@ if (userData) {
 
     return (
     <View style={styles.container}>
-      
+      <Image
+        style={styles.logo}
+        source={require('../assets/img/demiparte.png')}
+      />
         {isLoading ? (
         <ActivityIndicator />
       ) : ( <>

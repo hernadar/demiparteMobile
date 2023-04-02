@@ -97,7 +97,14 @@ const styles = StyleSheet.create({
     },
     buttonProducts: {
     backgroundColor: 'transparent',
-    borderColor: 'transparent'}
+    borderColor: 'transparent'
+    },
+    logo:{
+        width:300,
+        height:80,
+        padding:10,
+        marginVertical:10
+    }
 });
 
 export default styles;
