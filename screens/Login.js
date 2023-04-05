@@ -21,7 +21,7 @@ function Login({ navigation }) {
     // Trae Usuarios de la DB
     const getUsers = async () => {
         try {
-          const response = await fetch('http://192.168.100.2:3001/api/users');
+          const response = await fetch('http://demiparte.com.ar/api/users');
           const users = await response.json();
             
           setUsers(users.data);
@@ -48,7 +48,7 @@ const userData = users.find((user) => user.email === email);
 
 if (userData) {
   console.log('encontró el usuario');
-    if (bcrypt.compareSync(toString(password), userData.password)) {
+    if (bcrypt.compareSync(password, userData.password)) {
      
        console.log('Validó bien el usuario')
         navigation.navigate('Home', {

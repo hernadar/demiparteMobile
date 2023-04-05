@@ -48,7 +48,7 @@ function Change({ navigation, route }) {
             .then(response => response.json())
          // busco de la DB el ID de la empresa asociada al usuario Logueado
          console.log('Busco el Id de la empresa con el usuario legueado: ' + userLoggedId)
-        const empresaDelUsuarioLogueado = fetch('http://192.168.100.2:3001/api/users/profile/' + userLoggedId + '/company')
+        const empresaDelUsuarioLogueado = fetch('http://demiparte.com.ar/api/users/profile/' + userLoggedId + '/company')
             .then(response => response.json())    
 
         Promise.all([usuarios, empresaDelUsuarioLogueado]).then(results => {
@@ -84,7 +84,7 @@ function Change({ navigation, route }) {
         try {
             console.log('La empresa que canjea es: ' + companyId.companies_id)
             console.log('Los puntos que tiene el usuario son ' + points)
-            const response = await fetch('http://192.168.100.2:3001/api/companies/' + companyId[0].companies_id + '/products/change/' + points);
+            const response = await fetch('http://demiparte.com.ar/api/companies/' + companyId[0].companies_id + '/products/change/' + points);
             const products = await response.json();
 
             setProducts(products.data);
@@ -214,7 +214,7 @@ const confirmarCanje = async () =>{
     setLoading(true)
     try {
 
-        const response = await fetch('http://192.168.100.2:3001/api/users/' + userChange.id + '/points/' + (userChange.points - PointsSelected),
+        const response = await fetch('http://demiparte.com.ar/api/users/' + userChange.id + '/points/' + (userChange.points - PointsSelected),
         {
             method: 'POST',
            
@@ -228,7 +228,7 @@ const confirmarCanje = async () =>{
         console.log('esta es el Id de empresa:' + companyId[0].companies_id)
         
         
-        const response2 = await fetch('http://192.168.100.2:3001/api/companies/' + companyId[0].companies_id + '/changes/' + userId,
+        const response2 = await fetch('http://demiparte.com.ar/api/companies/' + companyId[0].companies_id + '/changes/' + userId,
         {
             method: 'POST',
             body: productsJSON,
