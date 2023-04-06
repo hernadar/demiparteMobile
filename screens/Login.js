@@ -25,12 +25,16 @@ function Login({ navigation }) {
           const users = await response.json();
             
           setUsers(users.data);
+          if (users.length !=0){
+            setLoading(false);
+          }
+        
           console.log(users)
           
         } catch (error) {
           console.error(error);
         } finally {
-          setLoading(false);
+         
         }
       };
 
