@@ -44,7 +44,7 @@ function Change({ navigation, route }) {
     useEffect(() => {
         // busco de la DB los usuarios
         console.log('Busco los usuarios')
-        const usuarios = fetch('http://192.168.100.2:3001/api/users')
+        const usuarios = fetch('http://demiparte.com.ar/api/users')
             .then(response => response.json())
          // busco de la DB el ID de la empresa asociada al usuario Logueado
          console.log('Busco el Id de la empresa con el usuario legueado: ' + userLoggedId)
