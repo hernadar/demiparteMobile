@@ -28,7 +28,7 @@ function Confirm( { navigation, route } ) {
     const getRecommendations = async () => {
         try {
           
-          const response = await fetch('http://demiparte.com.ar/api/users/recommendation');
+          const response = await fetch('https://demiparte.com.ar/api/users/recommendation');
           const recommendations = await response.json();
             
           setRecommendations(recommendations.data);
@@ -68,7 +68,7 @@ const recommendationFind = (data) =>{
 const changeRecommendation = async (recommendationData) => {
     try {
       
-      const response = await fetch('http://demiparte.com.ar/api/users/'+ recommendationData.users_id + '/recommendation/pending',
+      const response = await fetch('https://demiparte.com.ar/api/users/'+ recommendationData.users_id + '/recommendation/pending',
       {
         method: 'GET',
        
@@ -98,7 +98,7 @@ const update= async(e, id) => {
 
     try {
           
-        const response = await fetch('http://demiparte.com.ar/api/users/' + userId + '/recommendation/' + recommendationId + '/confirm/' + id,
+        const response = await fetch('https://demiparte.com.ar/api/users/' + userId + '/recommendation/' + recommendationId + '/confirm/' + id,
         {
             method: 'POST',
            

@@ -21,7 +21,7 @@ function Login({ navigation }) {
     // Trae Usuarios de la DB
     const getUsers = async () => {
         try {
-          const response = await fetch('http://demiparte.com.ar/api/users');
+          const response = await fetch('https://demiparte.com.ar/api/users');
           const users = await response.json();
             
           setUsers(users.data);

@@ -23,7 +23,7 @@ function QRscanner() {
     const getRecommendations = async () => {
         try {
           console.log('Busco todas las recomendaciones en la BD')
-          const response = await fetch('http://demiparte.com.ar/api/users/recommendation');
+          const response = await fetch('https://demiparte.com.ar/api/users/recommendation');
           const recommendations = await response.json();
           console.log(recommendations)
           //cargo en la variable recommendations las recomendacioones y habilito el scaneo de QR  
@@ -60,7 +60,7 @@ const recommendationFind = (data) =>{
 const changeRecommendation = async (recommendationData) => {
     try {
        
-      const response = await fetch('http://demiparte.com.ar/api/users/recommendation/updatePresentar/' + recommendationData.id,
+      const response = await fetch('https://demiparte.com.ar/api/users/recommendation/updatePresentar/' + recommendationData.id,
       {
         method: 'POST',
        
